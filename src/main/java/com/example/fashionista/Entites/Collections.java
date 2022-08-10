@@ -2,9 +2,7 @@ package com.example.fashionista.Entites;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,8 +17,13 @@ public class Collections {
     @GeneratedValue
     private Long id;
     private String collectionName;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "collections")
     private List<Looks> lookCollection;
+
     private boolean publicOrPrivate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Users users;
 
     
 }

@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import com.example.fashionista.Entites.Clothes;
 
 @Repository
-public interface clothesRepo extends PagingAndSortingRepository<Clothes,Long> {
+public interface ClothesRepository extends PagingAndSortingRepository<Clothes,Long> {
+
+    Clothes findClotheById(String id);
+
     
 }
