@@ -1,7 +1,6 @@
 package com.example.fashionista.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
@@ -22,10 +21,10 @@ public class clothService {
     }
 
     public List<Clothes> getAllClothes(){
-        return (List<Clothes>) clothesRepository.findAll();
+        return clothesRepository.findAll();
     }
-    public Optional<Clothes> findyByClothesId(@NonNull long clothId){
-        return clothesRepository.findById(clothId);
+    public Clothes findyByClothesId(@NonNull long clothId){
+        return clothesRepository.findByClothId(clothId);
     }
 
     public void deleteCloth(Clothes cloth){
