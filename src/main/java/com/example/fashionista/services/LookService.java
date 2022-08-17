@@ -29,12 +29,12 @@ public class LookService {
         return looksRepository.save(looks);
     }
 
-    public void addClothToLooks(Clothes clothes, Looks looks){
+    public void addClothesToLooks(Clothes clothes, Looks looks){
         looks.getLooks().add(clothes);
     }
 
     public void deleteClothFromLooks(Clothes clothes, Looks looks){
-        looks.getLooks().add(clothes);
+        looks.getLooks().remove(clothes);
     }
 
     //change back to looks object if there are errors
