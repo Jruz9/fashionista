@@ -16,7 +16,7 @@ public class Clothes {
     @Id
     @GeneratedValue
     private Long clothId;
-    private String name;
+    private String clothName;
     private String clothType;
     private String color;
     private String pattern;

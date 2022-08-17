@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class Collections {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long collectionId;
     private String collectionName;
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "collections")
     private List<Looks> lookCollection;

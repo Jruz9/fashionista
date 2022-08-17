@@ -5,10 +5,23 @@ import org.springframework.stereotype.Repository;
 
 import com.example.fashionista.Entites.Clothes;
 
+import java.util.List;
+import java.util.Optional;
+
 @Repository
 public interface ClothesRepository extends PagingAndSortingRepository<Clothes,Long> {
 
-    Clothes findClotheById(String id);
+    Clothes findByClothId(Long id);
+
+    Optional<Clothes> findAllByClothType(String clothType);
+
+    @Override
+    List<Clothes> findAll();
+
+    Clothes findByClothName(String clothName);
+
+
+
 
     
 }
