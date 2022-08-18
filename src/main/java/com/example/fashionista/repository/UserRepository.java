@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface UserRepository extends PagingAndSortingRepository<Users,Long>{
 
-    Users findAllByEmail(String email);
+    Users findByEmail(String email);
 
     Optional<Users> findAllById(Long id);
 

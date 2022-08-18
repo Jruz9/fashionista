@@ -20,6 +20,7 @@ public class CollectionService {
     CollectionRepository collectionRepository;
 
 
+    // @todo: move these functions to the entity class and call it from here.
     public void addLooksToCollections(Looks looks, Collections collections){
         collections.getLookCollection().add(looks);
     }
