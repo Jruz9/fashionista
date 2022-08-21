@@ -29,9 +29,8 @@ public class CollectionService {
         collections.getLookCollection().remove(looks);
     }
 
-    public void deleteCollection(Long collectionId){
-        Collections deletedCollection= collectionRepository.findByCollectionId(collectionId);
-        collectionRepository.delete(deletedCollection);
+    public void deleteCollection(Collections collections){
+        collectionRepository.delete(collections);
     }
 
     public List<Collections> CollectionList(){
@@ -44,6 +43,11 @@ public class CollectionService {
     public String getCollectionsUsers(Collections collections){
         String collectionCreator= collections.getUsers().getName();
         return collectionCreator;
+    }
+
+    public Collections findCollectionById(Long collectionId){
+        Collections foundCollection= collectionRepository.findByCollectionId(collectionId);
+        return foundCollection;
     }
 
 

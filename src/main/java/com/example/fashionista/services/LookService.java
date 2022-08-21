@@ -33,7 +33,7 @@ public class LookService {
         looks.getLooks().add(clothes);
     }
 
-    public void deleteClothFromLooks(Clothes clothes, Looks looks){
+    public void removeClothFromLooks(Clothes clothes, Looks looks){
         looks.getLooks().remove(clothes);
     }
 
@@ -51,5 +51,9 @@ public class LookService {
     public Looks findByLooksId(Long lookId){
         return looksRepository.findByLookId(lookId);
     }
+
+//    public Looks updateLookGeneralInformation(Long lookID){
+//        Looks looks = looksRepository.findByLookId(lookID);
+//    }
 
 }
