@@ -15,18 +15,22 @@ import lombok.NoArgsConstructor;
 public class Clothes {
     @Id
     @GeneratedValue
+
+    @Column(name = "id")
     private Long clothId;
+    @Column(name = "name")
     private String clothName;
+    @Column(name = "type")
     private String clothType;
     private String color;
     private String pattern;
     private String material;
     private Long size;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
-    @JsonIgnore
-    private Users user;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    @JsonIgnore
+//    private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Looks looks;

@@ -24,13 +24,16 @@ public class Users {
     private String password;
     private String description;
     private String name;
+    @Column(name = "status")
     private boolean active;
 
     //research is more with the cascade type
-    @OneToMany(fetch = FetchType.LAZY,cascade =  CascadeType.ALL, mappedBy = "users")
-    private Set<Clothes> clothes= new HashSet<>();
+//    @Column(name = "cloths")
+//    @OneToMany(mappedBy = "users")
+//    private Set<Clothes> clothes= new HashSet<>();
 
-    @OneToMany()
+    @Column(name = "collection")
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "users")
     private Set<Collections> collections= new HashSet<>();
 
 }

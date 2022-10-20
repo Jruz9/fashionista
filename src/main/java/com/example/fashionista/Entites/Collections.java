@@ -15,9 +15,13 @@ import lombok.NoArgsConstructor;
 public class Collections {
     @Id
     @GeneratedValue
+    @Column(name = "collectionid")
     private Long collectionId;
+    @Column(name = "collectionname")
     private String collectionName;
+
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "collections")
+    @Column(name = "look")
     private List<Looks> lookCollection;
 
     private boolean publicOrPrivate;

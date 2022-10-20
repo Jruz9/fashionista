@@ -21,8 +21,8 @@ public class LookService {
     @Autowired
     CollectionRepository collectionRepository;
 
-    @Autowired
-    LookService lookService;
+//    @Autowired
+//    LookService lookService;
 
 
     public Looks saveLook(Looks looks){

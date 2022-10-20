@@ -18,7 +18,6 @@ import java.util.Set;
 public class Looks {
     @Id
     @GeneratedValue
-
     private Long lookId;
     private String lookName;
 
