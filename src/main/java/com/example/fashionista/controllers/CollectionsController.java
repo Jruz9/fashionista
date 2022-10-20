@@ -6,9 +6,7 @@ import com.example.fashionista.services.CollectionService;
 import com.example.fashionista.services.LookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,23 +22,25 @@ public class CollectionsController {
     LookService lookService;
 
 
-    //todo: add function to create collection
-    public ResponseEntity createCollection(Collections collections){
+    // function to create collection
+    @PostMapping("/collections")
+    public ResponseEntity<String> createCollection(Collections collections){
         Collections saveCollection=collectionService.saveCollection(collections);
         return ResponseEntity.ok().build();
     }
 
 
-    //todo: add function to list all collections made
+    // function to list all collections made
+    @RequestMapping("/collections")
     public List<Collections> collectionsList(){
         List<Collections> groupList =  collectionService.CollectionList();
         return groupList;
     }
 
 
-    //todo: add function to delete collections
-
-    public ResponseEntity deleteCollection(Long collectionId){
+    // function to delete collections
+    @DeleteMapping("/collections/{id}")
+    public ResponseEntity<String> deleteCollection(@PathVariable("id") Long collectionId){
         Collections deletedCollection= collectionService.findCollectionById(collectionId);
         collectionService.deleteCollection(deletedCollection);
 
@@ -49,8 +49,9 @@ public class CollectionsController {
 
 
 
-    //todo: add function to add looks to a collection
-    public  ResponseEntity addLookToCollection(Long collectionId, Long lookId ){
+    // function to add looks to a collection
+    @PostMapping("/collections/{id}/{lookId}")
+    public  ResponseEntity addLookToCollection(@PathVariable("id") Long collectionId, @PathVariable("lookId") Long lookId ){
         Collections selectedCollection= collectionService.findCollectionById(collectionId);
         Looks selectedLook= lookService.findByLooksId(lookId);
         collectionService.addLooksToCollections(selectedLook,selectedCollection);
@@ -59,19 +60,20 @@ public class CollectionsController {
     }
 
 
-    //todo: add function to remove look from a collection
-    public  ResponseEntity removeLookFromCollection(Long collectionId,Long lookId){
+    // function to remove look from a collection
+    @DeleteMapping("collections/{id}/{lookId}")
+    public  ResponseEntity removeLookFromCollection(@PathVariable("id") Long collectionId, @PathVariable("lookId") Long lookId){
         Collections theCollection= collectionService.findCollectionById(collectionId);
         Looks removedLook=lookService.findByLooksId(lookId);
         collectionService.deleteLooksFromCollections(removedLook,theCollection);
         return  ResponseEntity.ok().build();
     }
 
-    //todo: add function to find collection by collectionId
+    // function to find collection by collectionId
 
-    public Collections findCollectionById(Long collectionsId){
-        Collections foundCollections= collectionService.findCollectionById(collectionsId);
-        return foundCollections;
+    @GetMapping("/collections/{id}")
+    public Collections findCollectionById(@PathVariable("id") Long collectionsId){
+        return collectionService.findCollectionById(collectionsId);
     }
 
 

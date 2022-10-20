@@ -6,9 +6,7 @@ import com.example.fashionista.services.LookService;
 import com.example.fashionista.services.clothService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,26 +22,34 @@ public class LooksController {
     clothService clothService;
 
 
-    // todo: create show looks list
-    @RequestMapping("/looks")
+    //  create show looks list
+    @PostMapping("/looks")
     public List<Looks> getAllLooks(){
         List<Looks> looksList=lookService.getAllLooks();
         return looksList;
     }
 
-    // todo: create add/create look list
+    // create add/create look list
+    @RequestMapping("/looks")
+    public ResponseEntity<String> createLook(Looks looks){
+        Looks saveLook= lookService.saveLook(looks);
+        return ResponseEntity.ok().build();
+    }
 
-    //todo: create find look by id function
-    public Looks findOneLook(Long lookId){
+
+    //create find look by id function
+    @GetMapping("/looks/{id}")
+    public Looks findOneLook(@PathVariable("id") Long lookId){
         Looks findOneLook=lookService.findByLooksId(lookId);
 
         return findOneLook;
     }
 
 
-    //todo: create update look list Information function
+    //create update look list Information function
 
-    public ResponseEntity UpdateLookListInformation(Long lookId){
+    @PutMapping("/looks/{id}")
+    public ResponseEntity<String> UpdateLookListInformation(@PathVariable("id") Long lookId){
         Looks lookGroup= lookService.findByLooksId(lookId);
 
         lookService.saveLook(lookGroup);
@@ -52,9 +58,10 @@ public class LooksController {
 
     }
 
-    //todo: create function to add clothes to looks list
+    //create function to add clothes to looks list
 
-    public ResponseEntity addClothesToLook(Long lookId, Long clothId){
+    @PostMapping("/looks/{id}/{clothId}")
+    public ResponseEntity<String> addClothesToLook(@PathVariable("id") Long lookId, @PathVariable("clothId") Long clothId){
         Looks LooksGroup=lookService.findByLooksId(lookId);
         Clothes clothesInLook=clothService.findyByClothesId(clothId);
         lookService.addClothesToLooks(clothesInLook, LooksGroup);
@@ -64,9 +71,9 @@ public class LooksController {
     }
 
 
-    //todo: create function to delete/remove clothes from looks list
-
-    public ResponseEntity removeClothFromLook(Long lookId, Long clothId){
+    //create function to delete/remove clothes from looks list
+    @DeleteMapping("/looks/{id}/{lookId}")
+    public ResponseEntity<String> removeClothFromLook( @PathVariable("id") Long lookId, @PathVariable("lookId") Long clothId){
         Looks looks = lookService.findByLooksId(lookId);
         Clothes clothes= clothService.findyByClothesId(clothId);
 
@@ -76,9 +83,9 @@ public class LooksController {
 
     }
 
-    // todo: Delete looks
-
-    public ResponseEntity deleteLook(Long lookId){
+    // Delete looks
+    @DeleteMapping("/looks/{id}")
+    public ResponseEntity<String> deleteLook(@PathVariable("id") Long lookId){
         Looks deletedLook= lookService.findByLooksId(lookId);
         lookService.deleteLook(deletedLook.getLookId());
 
