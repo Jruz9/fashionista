@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Home', 'Clothes', 'Lists'];
+const pages = ['Home', 'Clothes', 'Lists',"Collections"];
 
 function NavBarTop() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -86,7 +86,7 @@ function NavBarTop() {
 
 
 
-         x {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
