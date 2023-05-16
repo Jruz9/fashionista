@@ -97,7 +97,7 @@ function CreateCloth(){
                 </DialogContent>
                 <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={onSubmit(cloth)}>Create</Button>
+                <Button onClick={handleClose}>Create</Button>
                 </DialogActions>
             </Dialog>
         </div>
