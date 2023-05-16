@@ -145,10 +145,10 @@ function App() {
         <Divider />
         <List>
           {[
-            { name: "Home", icon: <HomeIcon /> },
-            { name: "Clothes", icon: <CheckroomIcon /> },
-            { name: "Looks", icon: <DashboardIcon /> },
-            { name: "Collections", icon: <CollectionsIcon /> }
+            { name: "Home", icon: <HomeIcon />,link:"/" },
+            { name: "Clothes", icon: <CheckroomIcon />,link:"/clothes" },
+            { name: "Looks", icon: <DashboardIcon />,link:"/looks" },
+            { name: "Collections", icon: <CollectionsIcon />,link:"collections" }
           ].map((text, index) => (
             <ListItem  key={index} disablePadding sx={{ display: 'block' }} components={Link}>
               <ListItemButton
@@ -158,6 +158,7 @@ function App() {
                   px: 2.5,
 
                 }}
+                href={text.link}
               >
                 <ListItemIcon
                   sx={{
@@ -179,7 +180,6 @@ function App() {
         <DrawerHeader />
         <div>
         <AppRoutes/>
-        {/* <ListAllClothing />  */}
         </div>       
       </Box>
     </Box>
