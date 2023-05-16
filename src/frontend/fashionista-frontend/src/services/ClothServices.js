@@ -23,5 +23,5 @@ class ClothServices{
     }
 
 }
-
-export default new  ClothServices();
+// eslint-disable-next-line import/no-anonymous-default-export
+export default new ClothServices();
