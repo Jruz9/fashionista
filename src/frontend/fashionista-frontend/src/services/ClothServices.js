@@ -11,7 +11,7 @@ class ClothServices{
     createClothes(clothes){
         return axios.post(CLOTH_API_BASE_URL,clothes)
     }
-    getAllClothessById(clothesId){
+    getClothessById(clothesId){
         return axios.get(CLOTH_API_BASE_URL+"/"+clothesId)
     }
     updateClothes(clothesId,clothes){

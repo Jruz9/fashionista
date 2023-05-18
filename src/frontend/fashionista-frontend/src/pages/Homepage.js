@@ -5,9 +5,10 @@ function Homepage() {
 
     return(
         <div>
-            <h1>welcome user</h1>
+            <h1>welcome user weather:☀️79 </h1>
+            <h1>Date:5/16</h1>
             <br></br>
-            
+
         </div>
     )
 }
