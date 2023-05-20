@@ -28,41 +28,32 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
+/**
+ * A generic table that allows you to display names
+ * @param {*} dataTable :A Array paramater that allows you to enter your data as a array.
+ * @returns A table component with the data from your array shown.
+ */
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-export default function TableComponent() {
+export default function TableComponent(dataTable,columnOneName) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Clothes name</StyledTableCell>
+            <StyledTableCell>{columnOneName}</StyledTableCell>
             <StyledTableCell align="right">Cloth Type</StyledTableCell>
             <StyledTableCell align="right">Color</StyledTableCell>
             <StyledTableCell align="right">Size</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right"></StyledTableCell>
-              <StyledTableCell align="right"></StyledTableCell>
-              <StyledTableCell align="right"></StyledTableCell>
-            </StyledTableRow>
-          ))}
+          {dataTable?.map(function (row) {
+            return (
+              <StyledTableRow key={row.id}>
+                <StyledTableCell >{row.name}</StyledTableCell>
+              </StyledTableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </TableContainer>
