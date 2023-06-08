@@ -1,6 +1,7 @@
 import { Grid} from "@mui/material";
 import { looksDataset } from "../sampledata/looksdataset";
 import InfoCard from "../components/cards/InfoCard";
+import UpdateTableComponent from "../components/table/UpdateTableComponent";
 
 
 
@@ -10,6 +11,7 @@ function LooksPage(){
 
     return(
         <div>
+            <UpdateTableComponent columnOneName="Looks"/>
             <hr></hr>
             {/* solution found here: https://stackoverflow.com/questions/51595156/three-cards-in-a-row-instead-of-all-cards-in-one-column?answertab=modifieddesc#tab-top */}
             <Grid container spacing={2} direction="row" justify="flex-start" alignItems="flex-start">

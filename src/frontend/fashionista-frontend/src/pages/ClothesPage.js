@@ -14,7 +14,7 @@ function  ClothesPage() {
 
     return(
         <div>
-            <h1 justifyContent='center'>Clothing</h1>
+            <h1>Clothing</h1>
             <Stack direction="row" spacing={2} justifyContent="flex-end">
             <CreateCloth/>
             <UpdateDeleteClothesList/>
