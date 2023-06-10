@@ -15,7 +15,8 @@ function AppRoutes() {
             <Route path="/"element={<Homepage/>}/>
             <Route path='/clothes' element={<ClothesPage/>}/>
             <Route path="/looks"element={<LooksPage/>}/>
-            <Route path='/collections' element={<AddLookForm/>}/>
+            <Route path='/collections' element=""/>
+            <Route path='/addLook' element={<AddLookForm/>}/>
             
         </Routes>
     )
