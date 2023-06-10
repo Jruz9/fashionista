@@ -4,6 +4,7 @@ import ClothesPage from '../pages/ClothesPage';
 import Homepage from '../pages/Homepage';
 import LooksPage from '../pages/LooksPage';
 import AddLookForm from '../components/forms/AddLookFormComponent';
+import CollectionPage from '../pages/CollectionPage';
 
 
 
@@ -15,7 +16,8 @@ function AppRoutes() {
             <Route path="/"element={<Homepage/>}/>
             <Route path='/clothes' element={<ClothesPage/>}/>
             <Route path="/looks"element={<LooksPage/>}/>
-            <Route path='/collections' element={<AddLookForm/>}/>
+            <Route path='/collections' element={<CollectionPage/>}/>
+            <Route path='/addLook' element={<AddLookForm/>}/>
             
         </Routes>
     )
