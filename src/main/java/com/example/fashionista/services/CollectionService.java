@@ -40,10 +40,10 @@ public class CollectionService {
     public Collections saveCollection(Collections collections){
         return  collectionRepository.save(collections);
     }
-    public String getCollectionsUsers(Collections collections){
-        String collectionCreator= collections.getUsers().getName();
-        return collectionCreator;
-    }
+    // public String getCollectionsUsers(Collections collections){
+    //     String collectionCreator= collections.getUsers().getName();
+    //     return collectionCreator;
+    // }
 
     public Collections findCollectionById(Long collectionId){
         Collections foundCollection= collectionRepository.findByCollectionId(collectionId);

@@ -4,14 +4,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
 public class Collections {
     @Id
     @GeneratedValue
@@ -29,5 +22,52 @@ public class Collections {
     @ManyToOne(fetch = FetchType.LAZY)
     private Users users;
 
+
+    public Collections(){
+        
+    }
+    
+
+    public Collections(Long collectionId, String collectionName, List<Looks> lookCollection, boolean publicOrPrivate) {
+        this.collectionId = collectionId;
+        this.collectionName = collectionName;
+        this.lookCollection = lookCollection;
+        this.publicOrPrivate = publicOrPrivate;
+    }
+
+
+    public Long getCollectionId() {
+        return collectionId;
+    }
+
+    public void setCollectionId(Long collectionId) {
+        this.collectionId = collectionId;
+    }
+
+    public String getCollectionName() {
+        return collectionName;
+    }
+
+    public void setCollectionName(String collectionName) {
+        this.collectionName = collectionName;
+    }
+
+    public List<Looks> getLookCollection() {
+        return lookCollection;
+    }
+
+    public void setLookCollection(List<Looks> lookCollection) {
+        this.lookCollection = lookCollection;
+    }
+
+    public boolean isPublicOrPrivate() {
+        return publicOrPrivate;
+    }
+
+    public void setPublicOrPrivate(boolean publicOrPrivate) {
+        this.publicOrPrivate = publicOrPrivate;
+    }
+
+    
     
 }

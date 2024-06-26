@@ -2,14 +2,7 @@ package com.example.fashionista.Entites;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "cloths")
 public class Clothes {
@@ -27,6 +20,8 @@ public class Clothes {
     private String material;
     private Long size;
 
+
+//Disables Relationship connections until fixed.
 //    @ManyToOne
 //    @JoinColumn(name = "user_id")
 //    @JsonIgnore
@@ -35,5 +30,89 @@ public class Clothes {
     @ManyToOne(fetch = FetchType.LAZY)
     private Looks looks;
 
+    //Nullary
+    public Clothes(){
+
+    }
+
+
+    public Clothes(Long clothId, String clothName, String clothType, String color, String pattern, String material,
+            Long size, Looks looks) {
+        this.clothId = clothId;
+        this.clothName = clothName;
+        this.clothType = clothType;
+        this.color = color;
+        this.pattern = pattern;
+        this.material = material;
+        this.size = size;
+        this.looks = looks;
+    }
+
+
+
+    public Long getClothId() {
+        return clothId;
+    }
+
+    public void setClothId(Long clothId) {
+        this.clothId = clothId;
+    }
+
+    public String getClothName() {
+        return clothName;
+    }
+
+    public void setClothName(String clothName) {
+        this.clothName = clothName;
+    }
+
+    public String getClothType() {
+        return clothType;
+    }
+
+    public void setClothType(String clothType) {
+        this.clothType = clothType;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getPattern() {
+        return pattern;
+    }
+
+    public void setPattern(String pattern) {
+        this.pattern = pattern;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
+    }
+
+    public Looks getLooks() {
+        return looks;
+    }
+
+    public void setLooks(Looks looks) {
+        this.looks = looks;
+    }
+    
 
 }
