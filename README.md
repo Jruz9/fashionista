@@ -10,22 +10,21 @@ of looks you can customize for any occasion you want.
 - Java 11
 - mySQL
 - Node Js
-- npm
-
-
+- NPM
 # Setup:
-## Local mysql database
-- open mysql console and run the schema sql file
+## Local Mysql Database
+- Open mysql gui console and run the schema sql file
 to create the local database
 
-## React with material UI frontend framework
-- inside the frontend folder, open the fashionista-frontend
+## Build React frontend
+- Inside the frontend folder, open the fashionista-frontend
 and npm install using the package.json
+- Run `node app.js`
 
+## Build java backend
+- IDE with java dveloper tools will recogize the pom xml if your in the java backend folder tree and auto build for it. If that does not happen continue forward 👇
+- Open the main folder in the project and run build package option in the pom xml file for intelj and similar or `maven build` in the command line 
 
-## Creating the jar
-
-
-## Deployment
 
 # Database structure:
+![Fashion backend ERD](/fashionAppERD.jpg "Fashion backend ERD")
