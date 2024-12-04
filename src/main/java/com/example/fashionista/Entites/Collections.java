@@ -1,19 +1,20 @@
 package com.example.fashionista.Entites;
 
-import java.util.List;
+import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
+import java.util.List;
+
 
 
 public class Collections {
     @Id
-    @GeneratedValue
-    @Column(name = "collectionid")
+    @Column(name = "collectionId")
     private Long collectionId;
-    @Column(name = "collectionname")
+    @Column(name = "collectionName")
     private String collectionName;
 
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "collections")
+    @OneToMany(cascade = CascadeType.MERGE,mappedBy = "collections")
     @Column(name = "look")
     private List<Looks> lookCollection;
 

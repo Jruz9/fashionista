@@ -11,18 +11,18 @@ CREATE SCHEMA  if not  exists `fashionista` ;
     );
 
 create table if not exists Looks(
-    lookid  int auto_increment,
-    lookname varchar(255) not null,
+    lookId  int auto_increment,
+    lookName varchar(255) not null,
     clothes int references Cloths(id),
-    primary key (lookid)
+    primary key (lookId)
     );
 
 
 create table if not exists Collections(
-    collectionid int auto_increment,
-    collectionname varchar(255) not null,
-    look int  references  Looks(lookid),
-    primary key(collectionid)
+    collectionId int auto_increment,
+    collectionName varchar(255) not null,
+    look int  references  Looks(lookId),
+    primary key(collectionId)
 
     );
 
@@ -33,6 +33,6 @@ create table if not exists User(
     description varchar (255) default  '',
     status enum("inactive","active") not null default 'inactive',
     cloths int references Cloths(id),
-    collection int references Collections(collectionid),
+    collection int references Collections(collectionId),
     primary key(id)
     );

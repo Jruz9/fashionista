@@ -1,14 +1,15 @@
 package com.example.fashionista.Entites;
 
-import javax.persistence.*;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "cloths")
 public class Clothes {
     @Id
     @GeneratedValue
-
     @Column(name = "id")
     private Long clothId;
     @Column(name = "name")
@@ -27,7 +28,8 @@ public class Clothes {
 //    @JsonIgnore
 //    private Users user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,optional = true, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "clothId")
     private Looks looks;
 
     //Nullary

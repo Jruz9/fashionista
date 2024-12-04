@@ -26,15 +26,16 @@ public class Looks {
     private Set<Clothes> looks = new HashSet<>();
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.MERGE,optional = true)
+    @JoinColumn(name = "collectionsId")
     private Collections collections;
 //    private Clothes hat;
 //    private Clothes bottoms;
 //    private Clothes shirt;
-//    private Clothes handAccesory;
-//    private Clothes neckAccesory;
-//    private Clothes legAccesory;
-//    private Clothes carryon;
+//    private Clothes handAccessory;
+//    private Clothes neckAccessory;
+//    private Clothes legAccessory;
+//    private Clothes carry-on;
 //    private Clothes jacket;
 //    private Clothes socks;
     
