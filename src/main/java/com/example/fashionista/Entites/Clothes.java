@@ -1,9 +1,16 @@
 package com.example.fashionista.Entites;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.FetchType;
 import org.springframework.data.annotation.Id;
+import jakarta.persistence.ManyToOne;
 
-import javax.persistence.*;
+import  jakarta.persistence.CascadeType;
 
 @Entity
 @Table(name = "cloths")
@@ -28,7 +35,7 @@ public class Clothes {
 //    @JsonIgnore
 //    private Users user;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = true, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "clothId")
     private Looks looks;
 

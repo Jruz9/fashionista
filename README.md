@@ -7,10 +7,14 @@ addition, from your looks you can create _**Collections**_
 of looks you can customize for any occasion you want. 
 
 # Requirements:
-- Java 11
-- mySQL
-- Node Js
-- NPM
+- Backend
+  - Java 17
+  - Postgres 14+
+  - Spring Boot 3.4.0
+- FrontEnd
+  - React
+  - NPM
+  - Material UI 
 # Setup:
 ## Local Mysql Database
 - Open mysql gui console and run the schema sql file

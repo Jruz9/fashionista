@@ -1,10 +1,9 @@
 package com.example.fashionista.Entites;
 
+import jakarta.persistence.*;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
 import java.util.List;
-
 
 
 public class Collections {

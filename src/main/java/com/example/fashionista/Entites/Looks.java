@@ -1,16 +1,10 @@
 package com.example.fashionista.Entites;    
-import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
 
 import java.util.HashSet;
 import java.util.Set;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 
 
 @Entity
