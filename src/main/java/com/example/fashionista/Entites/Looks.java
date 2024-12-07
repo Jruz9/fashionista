@@ -1,7 +1,6 @@
 package com.example.fashionista.Entites;    
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 import java.util.HashSet;
 import java.util.Set;

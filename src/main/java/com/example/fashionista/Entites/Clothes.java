@@ -1,23 +1,13 @@
 package com.example.fashionista.Entites;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Table;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.FetchType;
-import org.springframework.data.annotation.Id;
-import jakarta.persistence.ManyToOne;
-
-import  jakarta.persistence.CascadeType;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "cloths")
+//@Table(name = "cloths")
 public class Clothes {
     @Id
-    @GeneratedValue
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long clothId;
     @Column(name = "name")
     private String clothName;
@@ -36,7 +26,7 @@ public class Clothes {
 //    private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "clothId")
+    @JoinColumn(name = "lookId")
     private Looks looks;
 
     //Nullary

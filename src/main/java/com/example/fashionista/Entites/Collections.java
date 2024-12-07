@@ -1,11 +1,9 @@
 package com.example.fashionista.Entites;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
-
 import java.util.List;
 
-
+@Entity
 public class Collections {
     @Id
     @Column(name = "collectionId")
