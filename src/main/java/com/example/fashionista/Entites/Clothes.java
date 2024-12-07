@@ -20,20 +20,21 @@ public class Clothes {
 
 
 //Disables Relationship connections until fixed.
-//    @ManyToOne
-//    @JoinColumn(name = "user_id")
-//    @JsonIgnore
-//    private Users user;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "userId")
+    private Users user;
 
+    // Joins and relationships
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "lookId")
     private Looks looks;
+
+
 
     //Nullary
     public Clothes(){
 
     }
-
 
     public Clothes(Long clothId, String clothName, String clothType, String color, String pattern, String material,
             Long size, Looks looks) {

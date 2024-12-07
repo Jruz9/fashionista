@@ -12,7 +12,7 @@ of looks you can customize for any occasion you want.
   - Postgres 14+
   - Spring Boot 3.4.0
 - FrontEnd
-  - React
+  - React 18.2
   - NPM
   - Material UI 
 # Setup:

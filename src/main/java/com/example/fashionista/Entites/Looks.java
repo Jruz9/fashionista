@@ -14,7 +14,6 @@ public class Looks {
     private Long lookId;
     private String lookName;
 
-
     @OneToMany(fetch =FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "looks")
     private Set<Clothes> looks = new HashSet<>();
 

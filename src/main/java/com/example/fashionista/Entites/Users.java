@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -24,9 +25,20 @@ public class Users {
 //    @OneToMany(mappedBy = "users")
 //    private Set<Clothes> clothes= new HashSet<>();
 
+    // Todo:fix the Joins for all the other entities for user
+
+    //Foreign Keys
     @Column(name = "collection")
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "users")
     private Set<Collections> collections= new HashSet<>();
+
+
+    @OneToMany(fetch = FetchType.LAZY, cascade =  CascadeType.MERGE)
+    @JoinColumn(name = "user_look_id")
+    private List<Looks> looks;
+
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    private List<Clothes> clothes;
 
     //Nullary
     public Users(){

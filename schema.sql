@@ -1,5 +1,6 @@
 -- CREATE SCHEMA `fashionista` ;
-CREATE SCHEMA  if not  exists `fashionista` ;
+-- Todo: Check if the foreign key connections are working.
+CREATE table  if not  exists `cloths` ;
     id int auto_increment,
     name varchar(255) not null default '',
     type varchar (255) not null,
@@ -26,7 +27,7 @@ create table if not exists Collections(
 
     );
 
-create table if not exists User(
+create table if not exists Users(
     id int auto_increment,
     email varchar(255) not null,
     password varchar(255) not null,
