@@ -1,7 +1,7 @@
 package com.example.fashionista.controllers;
 
 import com.example.fashionista.Entites.Clothes;
-import com.example.fashionista.services.clothService;
+import com.example.fashionista.services.ClothService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 public class ClothesController {
 
     @Autowired
-    private clothService clothService;
+    private ClothService clothService;
 
 
     // function to display all clothes in repo
@@ -35,7 +35,7 @@ public class ClothesController {
     // create function for get 1 cloth by id
     @GetMapping("/clothes/{id}")
     public Clothes findOneCloth(@PathVariable("id") Long clothId){
-        Clothes findCloth=clothService.findyByClothesId(clothId);
+        Clothes findCloth=clothService.findByClothesId(clothId);
 
         return findCloth;
     }
@@ -45,7 +45,7 @@ public class ClothesController {
     @PutMapping("/clothes/{id}")
     public ResponseEntity<Clothes> updateClothes(Clothes clothes,@PathVariable("id") Long clothesId){
         //add exceptions later
-        final Clothes clothToUpdate= clothService.findyByClothesId(clothesId);
+        final Clothes clothToUpdate= clothService.findByClothesId(clothesId);
 
 
         return ResponseEntity.ok(clothService.saveClothes(clothToUpdate));
@@ -55,7 +55,7 @@ public class ClothesController {
     @DeleteMapping("/clothes/{id}")
     public ResponseEntity<String> deleteCloth(@PathVariable("id") Long clothId){
 
-        Clothes deleted_cloths= clothService.findyByClothesId(clothId);
+        Clothes deleted_cloths= clothService.findByClothesId(clothId);
         clothService.deleteCloth(deleted_cloths);
 
 

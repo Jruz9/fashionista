@@ -1,6 +1,6 @@
 package com.example.fashionista.Entites;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 
 import java.util.HashSet;

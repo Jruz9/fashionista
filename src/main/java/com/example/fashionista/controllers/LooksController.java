@@ -3,7 +3,7 @@ package com.example.fashionista.controllers;
 import com.example.fashionista.Entites.Clothes;
 import com.example.fashionista.Entites.Looks;
 import com.example.fashionista.services.LookService;
-import com.example.fashionista.services.clothService;
+import com.example.fashionista.services.ClothService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +19,7 @@ public class LooksController {
     LookService lookService;
 
     @Autowired
-    clothService clothService;
+    ClothService clothService;
 
 
     //  create show looks list
@@ -63,7 +63,7 @@ public class LooksController {
     @PostMapping("/looks/{id}/{clothId}")
     public ResponseEntity<String> addClothesToLook(@PathVariable("id") Long lookId, @PathVariable("clothId") Long clothId){
         Looks LooksGroup=lookService.findByLooksId(lookId);
-        Clothes clothesInLook=clothService.findyByClothesId(clothId);
+        Clothes clothesInLook=clothService.findByClothesId(clothId);
         lookService.addClothesToLooks(clothesInLook, LooksGroup);
 
         return ResponseEntity.ok().build();
@@ -75,7 +75,7 @@ public class LooksController {
     @DeleteMapping("/looks/{id}/{lookId}")
     public ResponseEntity<String> removeClothFromLook( @PathVariable("id") Long lookId, @PathVariable("lookId") Long clothId){
         Looks looks = lookService.findByLooksId(lookId);
-        Clothes clothes= clothService.findyByClothesId(clothId);
+        Clothes clothes= clothService.findByClothesId(clothId);
 
         lookService.removeClothFromLooks(clothes,looks);
 

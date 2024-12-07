@@ -11,7 +11,7 @@ import com.example.fashionista.repository.ClothesRepository;
 
 
 @Service
-public class clothService {
+public class ClothService {
 
     @Autowired
     ClothesRepository clothesRepository;
@@ -23,7 +23,7 @@ public class clothService {
     public List<Clothes> getAllClothes(){
         return clothesRepository.findAll();
     }
-    public Clothes findyByClothesId(@NonNull long clothId){
+    public Clothes findByClothesId(@NonNull long clothId){
         return clothesRepository.findByClothId(clothId);
     }
 

@@ -23,7 +23,36 @@ public class Looks {
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.MERGE,optional = true)
     @JoinColumn(name = "collectionsId")
     private Collections collections;
-//    private Clothes hat;
+
+    public  Looks(){
+
+    }
+
+    public Long getLookId() {
+        return lookId;
+    }
+
+    public void setLookId(Long lookId) {
+        this.lookId = lookId;
+    }
+
+    public String getLookName() {
+        return lookName;
+    }
+
+    public void setLookName(String lookName) {
+        this.lookName = lookName;
+    }
+
+    public Set<Clothes> getLooks() {
+        return looks;
+    }
+
+    public void setLooks(Set<Clothes> looks) {
+        this.looks = looks;
+    }
+
+    //    private Clothes hat;
 //    private Clothes bottoms;
 //    private Clothes shirt;
 //    private Clothes handAccessory;

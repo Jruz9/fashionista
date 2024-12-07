@@ -26,8 +26,8 @@ and npm install using the package.json
 - Run `node app.js`
 
 ## Build java backend
-- IDE with java dveloper tools will recogize the pom xml if your in the java backend folder tree and auto build for it. If that does not happen continue forward 👇
-- Open the main folder in the project and run build package option in the pom xml file for intelj and similar or `maven build` in the command line 
+- IDE with java developer tools will recognize the pom xml if your in the java backend folder tree and auto build for it. If that does not happen continue forward 👇
+- Open the main folder in the project and run build package option in the pom xml file for Intelj and similar or `maven build` in the command line 
 
 
 # Database structure:

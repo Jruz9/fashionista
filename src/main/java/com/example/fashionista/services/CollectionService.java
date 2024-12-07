@@ -34,7 +34,7 @@ public class CollectionService {
     }
 
     public List<Collections> CollectionList(){
-        return (List<Collections>) collectionRepository.findAll();
+        return collectionRepository.findAll();
     }
 
     public Collections saveCollection(Collections collections){
@@ -46,8 +46,7 @@ public class CollectionService {
     // }
 
     public Collections findCollectionById(Long collectionId){
-        Collections foundCollection= collectionRepository.findByCollectionId(collectionId);
-        return foundCollection;
+        return collectionRepository.findByCollectionId(collectionId);
     }
 
 
