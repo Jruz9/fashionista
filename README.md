@@ -1,5 +1,5 @@
 # Fashionista
-
+![Fashion backend ERD](/fashionAppERD.jpg "Fashion backend ERD")
 ## Description
  Fashionista is a Fashion organizing application that allows users to create outfits and collections in many different ways.
 The application has a modern ui that allows users to fashion easier and faster. Users can import their clothes and create outfits and collections, use AI or libraries for custom clothing. 
@@ -51,4 +51,3 @@ and run in terminal : ```npm install```
 - Open the main folder in the project and run build package option in the pom xml file for IntelliJ and similar or ```maven build``` in the command line
   - additional information included here for troubleshooting if needed: https://stackoverflow.com/questions/38315279/how-to-compile-maven-project-from-command-line-with-all-dependencies
 ### Database structure:
-![Fashion backend ERD](/fashionAppERD.jpg "Fashion backend ERD")
